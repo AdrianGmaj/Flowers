@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.active{
+    
+    border: 1px solid black;
+
+  
+        border-width: 2px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #ffd6c7, #bcdae2)1;
+    
+      
+}
+
+.toolbar-links{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+mat-toolbar-row{
+    max-height: 50px;
+    width: auto;
+}
+
+.side-nav-button{
+    width: 100%;
+}

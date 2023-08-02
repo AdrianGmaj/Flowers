@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <div class="login-container">
+    <div class="d-flex  justify-content-center p-4">
+      <h1><b>SIGN IN</b></h1>
+  
+
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="d-flex  justify-content-center p-3">
+      <form (ngSubmit)="onSubmit()" [formGroup]="SignInForm" action="" >
+        <div class="m-2">
+        <mat-form-field>
+          <mat-label>email</mat-label>
+          <input formControlName="email" type="text" matInput>
+          <mat-error style="color:black"  *ngIf="SignInForm.get('email').hasError('required')">
+          email required
+          </mat-error>
+          <mat-error  style="color:black" *ngIf="SignInForm.get('email').hasError('email')">
+          enter valid email
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field>
+          <mat-label>password</mat-label>
+          <input formControlName="password" type="password" matInput >
+          <mat-error style="color:black" *ngIf=" SignInForm.get('password').hasError('required')">
+            password requaired
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="d-flex  justify-content-center p-3">
+      <mat-error *ngIf="SignInForm.hasError('credentials')">{{SignInForm.getError('credentials')}}</mat-error>
+      </div>
+        <div class="d-flex  justify-content-center p-3">
+        <button [disabled]="SignInForm.invalid" mat-stroked-button> login</button>
+      </div>
+      </form>
+
+    </div>
+
+{{SignInForm.value | json}}
+  </div>
+</div>

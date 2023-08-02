@@ -1,0 +1,22 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.bggrey{
+    background-color: #fafafa;
+    width: 100%;
+    min-height: 400px;
+}
+
+span{
+    font-size: 30px;
+}
+
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+h3{
+    font-size: 27px;
+}

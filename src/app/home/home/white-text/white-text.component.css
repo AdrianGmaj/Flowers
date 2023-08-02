@@ -1,0 +1,24 @@
+.display2 {
+    font-size: 36px;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+}
+
+.frame {
+    min-width: 100px;
+    min-height: 100px;
+    padding: 10rem;
+    position: relative;
+    background: linear-gradient(to right, #ffd6c7, #bcdae2);
+    padding: 20px;
+}
+
+.inside {
+    background: white;
+    color: black;
+    padding: 2rem;
+}

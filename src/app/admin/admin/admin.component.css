@@ -1,0 +1,13 @@
+.admin-side {
+   
+    width: 200px;
+    height: 100%;
+
+}
+
+.admin-content {
+    padding: 16px;
+}
+.drawer{
+    min-height: 200px;
+}

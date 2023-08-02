@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row m-0 p-0">
+    <div  class="col-md-2 col-4 ">
+      <h3 class="mt-3"><b>Categories</b></h3>
+      <mat-nav-list>
+        <a routerLink="/shop/{{category.id}}" *ngFor="let category of categories$ |async" mat-list-item
+          routerLink="categories">{{category.name}}</a>
+
+        <a routerLink="/shop" mat-list-item>All</a>
+
+      </mat-nav-list>
+    </div>
+
+    <div class="right" class="col-md-10 col-8 m-0">
+
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>

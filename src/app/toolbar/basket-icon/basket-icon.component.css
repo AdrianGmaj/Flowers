@@ -1,0 +1,11 @@
+.active{
+    
+    border: 1px solid black;
+
+  
+        border-width: 2px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #ffd6c7, #bcdae2)1;
+    
+      
+}

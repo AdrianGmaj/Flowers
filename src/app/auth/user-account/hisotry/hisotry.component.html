@@ -1,0 +1,25 @@
+<div class="container p-4">
+  <mat-card>
+  <h2>purchase history</h2>
+<mat-accordion>
+  <div *ngFor="let order of orders">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       date: {{order.date | date:'shortDate'}}
+      </mat-panel-title>
+   
+    </mat-expansion-panel-header >
+    <span *ngFor="let product of order.products" >
+    <p class="p-3" ><span class=" float-start">{{product.name}}</span> <span class="m-5 ">{{product.price | currency}}</span> <img  class="rounded float-end img-fluid"  src='{{product.thumbnail}}' ></p>
+ <mat-divider class="p-2" ></mat-divider>
+  </span>
+    <span>
+      <h3><b>total price</b></h3>
+      <p>{{order.price | currency}}</p>
+    </span>
+  </mat-expansion-panel>
+</div>
+</mat-accordion>
+</mat-card>
+</div>

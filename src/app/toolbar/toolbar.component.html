@@ -1,0 +1,103 @@
+<mat-toolbar class="navbar d-flex">
+    <mat-toolbar-row>
+        <div>
+            <span>Flowers<span class="material-symbols-outlined">
+                    emoji_nature
+                </span></span>
+        </div>
+
+
+    </mat-toolbar-row>
+    <mat-toolbar-row class="d-lg-none d-xl-none d-md-none">
+
+        <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+
+                <app-basket-icon></app-basket-icon>
+
+                <ng-container *ngIf="isSignedAsUser()">
+                    <a class="m-3" data-bs-dismiss="offcanvas" mat-button routerLinkActive="active"
+                        routerLink="user"><span class="material-symbols-outlined" data-bs-dismiss="offcanvas">
+                            person
+                        </span></a>
+                </ng-container>
+
+                <ng-container *ngIf="!isSigned()">
+                    <a class="m-3" data-bs-dismiss="offcanvas" mat-button routerLinkActive="active"
+                        routerLink="sign-in"><span class="material-symbols-outlined">
+                            person
+                        </span></a>
+                </ng-container>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                    <li class="nav-item">
+                        <a data-bs-dismiss="offcanvas" class="side-nav-button" mat-button routerLinkActive="active"
+                            routerLink="home">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-bs-dismiss="offcanvas" class="side-nav-button" mat-button routerLinkActive="active"
+                            routerLink="shop">shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-bs-dismiss="offcanvas" class="side-nav-button" mat-button routerLinkActive="active"
+                            routerLink="services">services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a data-bs-dismiss="offcanvas" class="side-nav-button" mat-button routerLinkActive="active"
+                            routerLink="contact">contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a data-bs-dismiss="offcanvas" *ngIf="isSignedAsAdmin()" class="side-nav-button" mat-button
+                            routerLinkActive="active" routerLink="admin">admin</a>
+                    </li>
+
+                    <li class="nav-item">
+
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+
+    </mat-toolbar-row>
+    <mat-toolbar-row class="d-none d-md-block">
+
+        <div class="toolbar-links">
+
+            <a class="m-3" mat-button routerLinkActive="active" routerLink="home">home</a>
+            <a class="m-3" mat-button routerLinkActive="active" routerLink="shop">shop</a>
+            <a class="m-3" mat-button routerLinkActive="active" routerLink="services">services</a>
+            <a class="m-3" mat-button routerLinkActive="active" routerLink="contact">contact</a>
+            <a *ngIf="isSignedAsAdmin()" class="m-3" mat-button routerLinkActive="active" routerLink="admin">admin</a>
+            <app-basket-icon></app-basket-icon>
+            <ng-container *ngIf="!isSigned()">
+                <a class="m-3" mat-button routerLinkActive="active" routerLink="sign-in"><span
+                        class="material-symbols-outlined">
+                        person
+                    </span></a>
+            </ng-container>
+            <ng-container *ngIf="isSignedAsUser()">
+                <a class="m-3" mat-button routerLinkActive="active" routerLink="user"><span
+                        class="material-symbols-outlined">
+                        person
+                    </span></a>
+            </ng-container>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
