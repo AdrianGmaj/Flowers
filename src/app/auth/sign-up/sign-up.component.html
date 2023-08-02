@@ -1,56 +1,56 @@
 <div class="all">
-<div class="container mt-5">
-  <div class="login-container">
-    <div class="d-flex  justify-content-center p-4">
-      <h1><b>SIGN UP</b></h1>
-  
+  <div class="container mt-5">
+    <div class="login-container">
+      <div class="d-flex  justify-content-center p-4">
+        <h1><b>SIGN UP</b></h1>
 
+
+      </div>
+      <mat-divider></mat-divider>
+
+      <div class="d-flex  justify-content-center p-3">
+        <form (ngSubmit)="onSubmit()" [formGroup]="SignUpForm" action="">
+          <div class="m-2">
+            <mat-form-field>
+              <mat-label>email</mat-label>
+              <input formControlName="email" type="text" matInput required="">
+              <mat-error style="color:black" *ngIf="this.SignUpForm.get('email').hasError('required')">
+                email required
+              </mat-error>
+              <mat-error style="color:black" *ngIf="this.SignUpForm.get('email').hasError('email')">
+                enter valid email
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="m-2">
+            <mat-form-field>
+              <mat-label>password</mat-label>
+              <input formControlName="password" type="password" matInput required="">
+              <mat-error style="color:black" *ngIf="this.SignUpForm.get('password').hasError('required')">
+                password required
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="m-2">
+            <mat-form-field>
+              <mat-label>confirm password</mat-label>
+              <input formControlName="passwordConfirmation" type="password" matInput required="">
+              <mat-error style="color:black" *ngIf="this.SignUpForm.get('passwordConfirmation').hasError('required')">
+                password required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="d-flex  justify-content-center p-3">
+            <button [disabled]="SignUpForm.invalid" mat-stroked-button type="submit"> register</button>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- {{SignUpForm.value | json}}
+{{SignUpForm.errors | json}} -->
     </div>
-    <mat-divider></mat-divider>
-
-    <div class="d-flex  justify-content-center p-3">
-      <form (ngSubmit)="onSubmit()" [formGroup]="SignUpForm" action="" >
-        <div class="m-2">
-        <mat-form-field>
-          <mat-label>email</mat-label>
-          <input formControlName="email" type="text" matInput required="">
-          <mat-error style="color:black" *ngIf="this.SignUpForm.get('email').hasError('required')">
-            email required
-          </mat-error>
-          <mat-error style="color:black" *ngIf="this.SignUpForm.get('email').hasError('email')">
-           enter valid email
-          </mat-error>
-        </mat-form-field>
-        {{SignUpForm.get('email').errors | json}}
-      </div>
-      <div class="m-2">
-        <mat-form-field>
-          <mat-label>password</mat-label>
-          <input formControlName="password" type="password" matInput required="">
-          <mat-error style="color:black" *ngIf="this.SignUpForm.get('password').hasError('required')" >
-            password required
-          </mat-error>
-        </mat-form-field>
-   
-      </div>
-      <div class="m-2">
-        <mat-form-field>
-          <mat-label>confirm password</mat-label>
-          <input formControlName="passwordConfirmation" type="password" matInput required="">
-          <mat-error style="color:black" *ngIf="this.SignUpForm.get('passwordConfirmation').hasError('required')">
-            password required
-          </mat-error>
-        </mat-form-field>
-      </div>
-        <div class="d-flex  justify-content-center p-3">
-        <button mat-stroked-button type="submit"> register</button>
-      </div>
-      </form>
-
-    </div>
-
-{{SignUpForm.value | json}}
-{{SignUpForm.errors | json}}
   </div>
-</div>
 </div>
