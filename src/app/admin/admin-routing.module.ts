@@ -11,8 +11,21 @@ children:[
     loadChildren:()=> import('./admin/categories/categories.module').then(m=>m.CategoriesModule),
   },
   {
+    path:"",
+    loadChildren:()=> import('./admin/categories/categories.module').then(m=>m.CategoriesModule),
+  },
+    // {
+  //   path:"",
+  //   redirectTo: 'categories',
+  //   pathMatch: 'full'
+  // },
+  {
     path:"products",
     loadChildren:()=> import('./admin/products/products.module').then(m=>m.ProductsModule),
+  },
+  {
+    path:"newsletters",
+    loadChildren:()=> import('./admin/newsletters/newsletters.module').then(m=>m.NewslettersModule),
   }
 
 ], canActivate: [AuthAdminGuard]}

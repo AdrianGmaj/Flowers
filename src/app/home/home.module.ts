@@ -10,6 +10,9 @@ import { WhiteTextComponent } from './home/white-text/white-text.component';
 import { DividerBlueComponent } from './home/divider-blue/divider-blue.component';
 import { NewstletterComponent } from './home/newstletter/newstletter.component';
 import { WhyFlowersComponent } from './home/why-flowers/why-flowers.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -18,6 +21,7 @@ import { WhyFlowersComponent } from './home/why-flowers/why-flowers.component';
     CommonModule,
     HomeRoutingModule,
     MaterialModule,
+    ReactiveFormsModule
    
   ],
   exports: [
